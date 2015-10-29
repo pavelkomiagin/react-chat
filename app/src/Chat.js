@@ -10,17 +10,60 @@ class Chat extends React.Component {
   
   render() {
     return <div>
-             <div className='top_menu'>
-               <div className='buttons'>
-                 <div className='button close'></div>
-                 <div className='button minimize'></div>
-                 <div className='button maximize'></div>
-               </div>
-               <div className='title'>Chat</div>
-             </div>
+             <TopMenu />
              <MessagesList />
              <BottomWrapper />
            </div>
+  }
+}
+
+class TopMenu extends React.Component {
+  constructor() {
+    super();
+  }
+  
+  render() {
+    return <div className='top_menu'>
+             <TopButtons />
+             <ChatTitle />
+           </div>
+  }
+}
+
+class TopButtons extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      buttons: [ 'close', 'minimize', 'maximize' ]
+    }
+  }
+  
+  render() {
+    var buttons = this.state.buttons.map((button, index) => {
+      return <TopButton key={index} type={button} />
+    });
+    
+    return <div className='buttons'>{buttons}</div>
+  }
+}
+                                         
+class TopButton extends React.Component {
+  constructor() {
+    super();
+  }
+  
+  render() {
+    return <div className={this.props.type + ' button'}></div>
+  }
+}
+  
+class ChatTitle extends React.Component {
+  constructor() {
+    super();
+  }
+  
+  render() {
+    return <div className='title'>Chat</div>
   }
 }
 
