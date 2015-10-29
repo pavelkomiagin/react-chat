@@ -2,18 +2,13 @@
 
 var React = require('react');
 var Message = require('./Message');
+var ChatStore = require('../stores/ChatStore');
 
 class MessagesList extends React.Component {
   constructor() {
     super();
     this.state = {
-      messages: [
-        {
-          text: 'Hello world!'
-        }, {
-          text: 'Yep, hello!'
-        }
-      ]
+      messages: ChatStore.getAllMessages()
     }
   }
 
