@@ -3,10 +3,6 @@
 var React = require('react');
 
 class Message extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     var positions = ['left', 'right'];
     var positionClassName = positions[this.props.position % 2];

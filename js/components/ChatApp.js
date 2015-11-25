@@ -3,10 +3,6 @@
 var React = require('react');
 
 class ChatApp extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <div>

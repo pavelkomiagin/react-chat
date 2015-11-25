@@ -3,10 +3,6 @@
 var React = require('react');
 
 class BottomWrapper extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <div className='bottom_wrapper clearfix'>
