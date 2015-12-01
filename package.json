@@ -2,6 +2,7 @@
   "name": "react-chat",
   "version": "0.5.0",
   "description": "Simple but nice looking chat concept using React and Flux.",
+  "license": "MIT",
   "repository": "https://github.com/pavelkomiagin/react-chat",
   "main": "js/app.js",
   "dependencies": {
@@ -9,19 +10,30 @@
     "flux": "^2.0.1",
     "keymirror": "~0.1.0",
     "object-assign": "^1.0.0",
-    "react": "^0.12.0"
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
   },
   "devDependencies": {
-    "browserify": "^6.2.0",
     "envify": "^3.0.0",
     "jest-cli": "^0.4.3",
-    "reactify": "^0.15.2",
     "uglify-js": "~2.4.15",
-    "watchify": "^2.1.1"
+    "watchify": "^2.1.1",
+    "gulp": "3.8.10",
+    "gulp-run": "1.6.5",
+    "gulp-sass": "2.1.0",
+    "gulp-concat": "2.4.3",
+    "gulp-uglify": "1.5.1",
+    "gulp-minify-css": "0.3.11",
+    "gulp-jshint": "1.9.0",
+    "browser-sync": "1.8.2",
+    "browserify": "12.0.1",
+    "vinyl-source-stream": "1.0.0",
+    "vinyl-buffer": "1.0.0",
+    "reactify": "0.17.1"
   },
   "scripts": {
     "start": "watchify -o js/bundle.js -v -d js/app.js",
-    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > js/bundle.min.js",
+    "build": "browserify . | uglifyjs -cm > js/bundle.min.js",
     "test": "jest"
   },
   "author": "Pavel Komiagin",
